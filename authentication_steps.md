@@ -26,9 +26,10 @@ end
 
 ###Step by step user validation
 
-1. Go to your Application Controller file and add the following "current_user" method and the "authenticate_user!" method below. Also make sure you change "prtect_from_forgery" to "with: :exception".
+1. Go to your Application Controller file and add the following "current_user" method and the "authenticate_user!" method below. Also make sure you change `"protect_from_forgery"` to `"with: :exception"`.
 
-```class ApplicationController < ActionController::Base
+```
+class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :current_user
@@ -56,9 +57,9 @@ end
 2. You will now go to your routes file and add the routes necessary to route the user to login and logout. This will send the user to the correct action to create and destroy a session, which we will be creating in the next step. The routes to add to your routes.rb file are:
 
 ```
-  get 'login', to: 'sessions#new',    as: 'login'
-  post 'login', to: 'sessions#create', as: 'create_session'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+get 'login', to: 'sessions#new',    as: 'login'
+post 'login', to: 'sessions#create', as: 'create_session'
+get 'logout', to: 'sessions#destroy', as: 'logout'
 ```
 
 3. Now we need to create a sessions controller to handle all of the actions related to a user session. Navigate to app > controllers and add a brand new file called "sessions_controller.rb" that inherts from our applicaton controller, like this:
