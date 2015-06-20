@@ -26,7 +26,7 @@ end
 
 ###Step by step user validation
 
-1. Go to your Application Controller file and add the following "current_user" method and the "authenticate_user!" method below. Also make sure you change `"protect_from_forgery"` to `"with: :exception"`.
+* Go to your Application Controller file and add the following "current_user" method and the "authenticate_user!" method below. Also make sure you change `"protect_from_forgery"` to `"with: :exception"`.
 
 ```
 class ApplicationController < ActionController::Base
@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-2. You will now go to your routes file and add the routes necessary to route the user to login and logout. This will send the user to the correct action to create and destroy a session, which we will be creating in the next step. The routes to add to your routes.rb file are:
+* You will now go to your routes file and add the routes necessary to route the user to login and logout. This will send the user to the correct action to create and destroy a session, which we will be creating in the next step. The routes to add to your routes.rb file are:
 
 ```
 get 'login', to: 'sessions#new',    as: 'login'
@@ -62,7 +62,7 @@ post 'login', to: 'sessions#create', as: 'create_session'
 get 'logout', to: 'sessions#destroy', as: 'logout'
 ```
 
-3. Now we need to create a sessions controller to handle all of the actions related to a user session. Navigate to app > controllers and add a brand new file called "sessions_controller.rb" that inherts from our applicaton controller, like this:
+* Now we need to create a sessions controller to handle all of the actions related to a user session. Navigate to `app > controllers` and add a brand new file called "sessions_controller.rb" that inherts from our applicaton controller, like this:
 
 ```
 class SessionsController < ApplicationController
@@ -70,7 +70,7 @@ class SessionsController < ApplicationController
 end
 ```
 
-4. In the new sessions controller file, you will need to add the new, create and destroy actions which will — you guessed it — create and destroy user sessions.
+* In the new sessions controller file, you will need to add the new, create and destroy actions which will — you guessed it — create and destroy user sessions.
 
 ```
 class SessionsController < ApplicationController
@@ -98,11 +98,11 @@ end
 
 **Please note:** You can redirect users to the root url (or any other url you want), or you can also render JSON.
 
-5. Now that we have our routes and actions for logging in, we will need a view for our users to actually login. Go to app > views and create a new folder called "sessions".
+* Now that we have our routes and actions for logging in, we will need a view for our users to actually login. Go to `app > views` and create a new folder called "sessions".
 
-6. In the new "sessions" folder you just made in the views folder, create a new file called "new.html.erb". This will be our form to login.
+* In the new "sessions" folder you just made in the views folder, create a new file called "new.html.erb". This will be our form to login.
 
-7. Add a form in your "new.html.erb" that allows users to login. A sample form is below:
+* Add a form in your "new.html.erb" that allows users to login. A sample form is below:
 
 ```
 <div class="container">
@@ -116,7 +116,7 @@ end
   <% end %>
 </div>
 ```
-8. Now, we need to build a helper model to help us check if a user is logged in. Go to app > helpers > application_helper.rb and add the following 'logged_in?' method:
+* Now, we need to build a helper model to help us check if a user is logged in. Go to `app > helpers > application_helper.rb` and add the following 'logged_in?' method:
 
 ```
 module ApplicationHelper
