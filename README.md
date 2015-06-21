@@ -11,7 +11,6 @@
   -if you've already created your branch: git checkout (branchname)
 3) make sure you have all the most current changes from master: git pull origin master
 4) Now you can begin working in your branch
-------
 ####To Commit New Changes to Master
 1) git add .
 2) git commit -m "Commit message"
