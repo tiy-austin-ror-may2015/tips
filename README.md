@@ -16,7 +16,7 @@
 1) git add .
 2) git commit -m "Commit message"
 3) git pull origin master
-4) git checkout origin master
+4) git checkout master
 5) git merge (branchname)
 6) git push origin master
 7) git checkout (branchname)
